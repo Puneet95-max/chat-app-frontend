@@ -7,7 +7,7 @@ export default function Chat() {
     const socket = useRef(null);
 
     useEffect(() => {
-        socket.current = new WebSocket("ws://localhost:8000/ws/chat");
+        socket.current = new WebSocket("wss://chat-app-backend-5ztd.onrender.com/ws/chat");
 
         socket.current.onmessage = (event) => {
             setMessages((prev) => [...prev, event.data]);
